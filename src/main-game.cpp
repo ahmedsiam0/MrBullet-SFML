@@ -101,7 +101,6 @@ int main() {
                         {
                             bullets[i].clock.restart();
                             bullets.erase(bullets.begin() + i);
-                            std::cout << "erased";
 
                             level_complete = true;
 
@@ -128,7 +127,6 @@ int main() {
                         {
                             bullets[i].clock.restart();
                             bullets.erase(bullets.begin() + i);
-                            std::cout << "erased";
 
                             level_complete = true;
 
@@ -226,7 +224,6 @@ int main() {
             {
                 bullets[i].clock.restart();
                 bullets.erase(bullets.begin() + i);
-                std::cout << "erased";
 
                 level_complete = true;
 

@@ -394,7 +394,6 @@ sf::Event levels_eventloop(int enemies_num)
         //Mouse Events
         if (event.type == Event::MouseButtonPressed)
         {
-            cout << Mouse::getPosition().x << "\t" << Mouse::getPosition().y << endl;
             if (Mouse::isButtonPressed(Mouse::Left))
             {
 
@@ -419,7 +418,6 @@ sf::Event levels_eventloop(int enemies_num)
                     sf::Vector2i mousePosition = sf::Mouse::getPosition(window);
                     Vector2i mousepos = Mouse::getPosition(window);
                     //CircleShape newBullet(10.f);
-                    std::cout << "yes";
                     Bullet newBullet;
                     newBullet.bulletBody.setFillColor(sf::Color::Black);
                     newBullet.bulletBody.setRadius(50.f);
@@ -909,7 +907,6 @@ sf::Event Duels_eventLoop()
                 {
                     shot = true;
                     Vector2i mousepos = Mouse::getPosition(window);
-                    std::cout << "yes";
                     Bullet newBullet;
                     newBullet.bulletBody.setFillColor(sf::Color::Black);
                     newBullet.bulletBody.setRadius(50.f);
@@ -921,7 +918,6 @@ sf::Event Duels_eventLoop()
                     bullets.push_back(newBullet);
 
                     lev[level_index].num_of_bullets--;
-                    cout << 1 << endl;
 
                     if (playerOne.turn)
                     {

@@ -719,7 +719,6 @@ void Reset()
         lev[level_index].target[i].dead = false;
         character_show(lev[level_index].target[i]);
     }
-    cout << lev[level_index].num_of_bullets << endl;
 
     if (level_index == 0)
         constructlev1(window);
@@ -731,12 +730,10 @@ void Reset()
         constructlev4(window);
     else if (level_index == 4)
         constructlev5(window);
-    cout << lev[level_index].num_of_bullets << endl;
     for (int i = bullets.size() - 1; i >= 0; i--)
     {
         bullets[i].clock.restart();
         bullets.erase(bullets.begin() + i);
-        std::cout << "erased";
     }
 }
 
