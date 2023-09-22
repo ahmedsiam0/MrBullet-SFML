@@ -917,7 +917,7 @@ void player_two_menu()
 void ReadFile() {
     string myText;
     // Read from the text file
-    ifstream saveFile("save.txt");
+    ifstream saveFile("assets/save.txt");
     int levNum = 0;
     // Use a while loop together with the getline() function to read the file line by line
     while (getline(saveFile, myText)) {
@@ -935,7 +935,7 @@ void ReadFile() {
 
 void WriteFile() {
         // Create and open a text file
-        ofstream myfile("save.txt");
+        ofstream myfile("assets/save.txt");
         int levNum = 0;
         if (myfile.is_open())
         {

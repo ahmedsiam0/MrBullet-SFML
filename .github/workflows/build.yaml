@@ -1,0 +1,23 @@
+name: Mr. Bullet Build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v3
+    - name: dependencies
+      run: |
+           sudo apt-get -qy update
+           sudo apt-get -qfy install --no-install-recommends build-essential automake autotools-dev pkg-config libsfml-dev
+    - name: autoreconf
+      run: autoreconf -fvi
+    - name: configure
+      run: ./configure --disable-static --enable-python-bindings
+    - name: build
+      run: make -j4 V=1 VERBOSE=1
+    - name: tests
+      run: make test
+    - name: make install
+      run: sudo make install
