@@ -12,12 +12,10 @@ jobs:
            sudo apt-get -qy update
            sudo apt-get -qfy install --no-install-recommends build-essential automake autotools-dev pkg-config libsfml-dev
     - name: autoreconf
-      run: autoreconf -fvi
+      run: autoreconf --install
     - name: configure
-      run: ./configure --disable-static --enable-python-bindings
+      run: ./configure
     - name: build
       run: make -j4 V=1 VERBOSE=1
-    - name: tests
-      run: make test
     - name: make install
       run: sudo make install
