@@ -1242,7 +1242,9 @@ void constructOneVSone_two(RenderWindow& window) {
     lev[17].BG.loadFromFile("assets/Backgrounds/background_vampire.png");
     lev[17].bg.setTexture(lev[17].BG);
     lev[17].bg.setScale(4, 1.2);
-
+    
+    character_set_scale(playerOne, 0.3);
+    character_set_scale(playerTwo, 0.3);
 
     lev[17].BLOCK[1].loadFromFile("assets/Textures/pyr_block.png");
 
@@ -2000,19 +2002,19 @@ void DrawingLevels(int num, RenderWindow& window)
 
 
     float x = 420.0f * cos(angle);
-    float y = 300.0f * sin(angle);
+    float y = 500.0f * sin(angle);
     float x2 = 420.0f * -cos(angle);
-    float y2 = 300.0f * -sin(angle);
+    float y2 = 500.0f * -sin(angle);
     lev[17].block[1].setPosition(1100 + x, 540 + y);
     lev[17].block[2].setPosition(700 + x2, 540 + y2);
-    character_set_scale(playerOne, 0.5);
-    character_set_scale(playerTwo, 0.5);
-    character_set_position(playerOne, Vector2f(1030 + x, 300 + y));
-    character_set_position(playerTwo, Vector2f(600 + x2, 300 + y2));
+    //character_set_scale(playerOne, 0.5);
+    //character_set_scale(playerTwo, 0.5);
+    character_set_position(playerOne, Vector2f(1100 + x, 360 + y));
+    character_set_position(playerTwo, Vector2f(670 + x2, 360 + y2));
 
 
     // Increment the angle
-    angle += 0.5;
+    angle += 0.05;
 
 
     for (int i = 1; i <= 4; i++) {
